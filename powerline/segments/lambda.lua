@@ -1,3 +1,5 @@
+local Util = require("powerline.utils.util")
+
 local Lambda = {}
 
 function Lambda.apply(Powerline)
@@ -6,13 +8,13 @@ function Lambda.apply(Powerline)
 	if lastExit ~= nil then
 		lastExit = tonumber(lastExit)
 		if lastExit ~= 0 then
-			value = value .. " ✘"
+			value = value .. Util.applyStyle({fg = Powerline.Colors.red}) .. " ✘"
 		end
 	end
 
 	return {
-		fg = Powerline.Colors.black,
-		bg = Powerline.Colors.yellow,
+		fg = Powerline.Colors.yellow,
+		bg = Powerline.Colors.black,
 		value = value
 	}
 end

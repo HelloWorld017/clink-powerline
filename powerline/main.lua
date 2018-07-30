@@ -74,6 +74,12 @@ function Powerline.updateSegment(previousSegment, segment)
 				style.fg = segment.fg
 				divider = Powerline.Symbols.segmentSoft
 			end
+		else
+			-- Add soft divider on Black -> Black
+			if previousSegment.bg == Powerline.Colors.black then
+				style.fg = previousSegment.fg
+				divider = Powerline.Symbols.segmentSoft
+			end
 		end
 
 		styleCode = styleCode .. Util.applyStyle(style) .. divider
