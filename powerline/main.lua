@@ -1,7 +1,6 @@
 local CwdSegment = require("powerline.segments.cwd")
 local GitSegment = require("powerline.segments.git")
 local LambdaSegment = require("powerline.segments.lambda")
-local HgSegment = require("powerline.segments.mercurial")
 local NodeSegment = require("powerline.segments.node")
 local TimeSegment = require("powerline.segments.time")
 
@@ -29,7 +28,6 @@ Powerline.Segments = {
 	cwd = CwdSegment,
 	git = GitSegment,
 	lambda = LambdaSegment,
-	hg = HgSegment,
 	node = NodeSegment,
 	time = TimeSegment
 }
