@@ -6,7 +6,7 @@ function Lambda.apply(Powerline)
 	if lastExit ~= nil then
 		lastExit = tonumber(lastExit)
 		if lastExit ~= 0 then
-			value = value .. "✘"
+			value = value .. " ✘"
 		end
 	end
 

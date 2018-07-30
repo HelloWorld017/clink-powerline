@@ -10,7 +10,6 @@ function Node.apply(Powerline)
 	local value = " " .. version
 	local nodeDir = Util.containsPath("package.json", false)
 	if nodeDir ~= nil then
-		print(nodeDir)
 		local fd, err = io.open(nodeDir)
 
 		if fd ~= nil then
