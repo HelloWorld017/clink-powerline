@@ -16,7 +16,7 @@ git clone https://github.com/HelloWorld017/clink-powerline.git
 mklink powerline.lua (source directory)/powerline.lua
 mklink /d powerline (source directory)/powerline
 ```
-**This method can occur bugs which says `could not find powerline`.**
+**This method can occur a bug which says `could not find powerline`.**
 
 ## Screenshots
 ![Screenshot](https://i.imgur.com/Kuj6GdI.png)
