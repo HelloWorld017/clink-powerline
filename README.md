@@ -9,8 +9,17 @@ Go to [release tab](https://github.com/HelloWorld017/clink-powerline/releases), 
 For cmder user, it is (cmder/config directory)
 
 ### From Source (For development)
-Download source and copy powerline.lua and powerline folder to clink profile directory.  
-This method can occur bugs which says `could not find powerline`.
+Download source and link powerline.lua and powerline folder to clink profile directory.  
+```
+git clone https://github.com/HelloWorld017/clink-powerline.git
+(move to clink profile directory)
+mklink powerline.lua (source directory)/powerline.lua
+mklink /d powerline (source directory)/powerline
+```
+**This method can occur bugs which says `could not find powerline`.**
+
+## Screenshots
+![Screenshot](https://i.imgur.com/Kuj6GdI.png)
 
 ## Included Sections
  * Currently Working Directory `cwd`  
@@ -44,5 +53,9 @@ When arguments are supplied to `textseg`, it will show arguments.
 Powerline.init({"textseg/λ:black+yellow", "time:red+black", "cwd", "node", "git", "text/\n", "lambda/nenw*"})
 ```
 
-## Screenshots
-![Screenshot](https://i.imgur.com/Kuj6GdI.png)
+## Bundling
+I have made some change to [luapack](https://gist.github.com/turtleDev/a54a61a14e4a438f893865843279fd40) in order to build in Windows.  
+You should need MinGW to build. (Maybe it comes with cmder)
+
+In project directory, please execute command `lua bundler.lua powerline.lua`.  
+It will be bundled in `dist/powerline.bundle.lua`.
