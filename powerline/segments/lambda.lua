@@ -2,8 +2,8 @@ local Util = require("powerline.utils.util")
 
 local Lambda = {}
 
-function Lambda.apply(Powerline)
-	local value = "λ"
+function Lambda.apply(Powerline, args)
+	local value = args or "λ"
 	local lastExit = clink.get_env("=ExitCode")
 	if lastExit ~= nil then
 		lastExit = tonumber(lastExit)
