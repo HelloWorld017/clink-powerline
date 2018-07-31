@@ -104,13 +104,13 @@ function Powerline.parseSegment(segmentSyntax)
 	end
 
 	local segmentColor = nil
-	local segmentColorMatch = segmentSyntax:match("^:([a-z]+)")
+	local segmentColorMatch = segmentSyntax:match("^:([a-zA-Z]+)")
 	if segmentColorMatch ~= nil then
 		segmentColor = {}
 		segmentSyntax = segmentSyntax:sub(#segmentColorMatch + 2)
 		segmentColor.fg = segmentColorMatch
 
-		local segmentBgMatch = segmentSyntax:match("^+([a-z]+)")
+		local segmentBgMatch = segmentSyntax:match("^+([a-zA-Z]+)")
 		if segmentBgMatch ~= nil then
 			segmentColor.bg = segmentBgMatch
 		end
