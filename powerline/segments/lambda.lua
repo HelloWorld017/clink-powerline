@@ -12,10 +12,7 @@ function Lambda.apply(Powerline, args)
 		
 		if argRoot ~= nil then
 			rootCheck = tonumber(argRootFlag)
-			
-			if #argValue > 0 then
-				value = argValue
-			end
+			value = argValue
 			
 			if #argRoot > 0 then
 				rootValue = argRoot
