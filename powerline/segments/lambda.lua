@@ -11,6 +11,10 @@ function Lambda.apply(Powerline, args)
 			value = value .. Util.applyStyle({fg = Powerline.Colors.red}) .. " ✘"
 		end
 	end
+	
+	if Lambda.checkRoot() then
+		value = "⚡"
+	end
 
 	return {
 		fg = Powerline.Colors.yellow,
@@ -19,4 +23,12 @@ function Lambda.apply(Powerline, args)
 	}
 end
 
+function Lambda.checkRoot()
+	local isRoot = io.popen("cmd /c net.exe session 1>nul 2>nul || echo false")
+	for line in isRoot:lines() do
+		isRoot:close()
+		return false
+	end
+	return true
+end
 return Lambda
