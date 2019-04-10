@@ -24,10 +24,11 @@ mklink /d powerline (source directory)/powerline
 ## Included Sections
  * Currently Working Directory `cwd`  
  * Git `git`  
- * Lambda `lambda` (A lambda icon with indicator wich shows last command is successful)  
+ * Lambda `lambda` (A lambda icon with indicator showing has admin privilege and is last command successful)  
  * Node `node` (Shows node version and package name)  
  * Time `time`  
  * Text `textseg` (A custom text)  
+ * Plain Text `text` (Custom text, but not treated as section, the raw text is just appended)
 
 ## Editing Powerline
 If you want to edit your powerline, please open lua file and find `Powerline.init`.  
@@ -45,12 +46,19 @@ lightBlack, lightRed, lightGreen, lightYellow, lightBlue, lightMagenta, lightCya
 ```
 
 `args` are optional and used for `lambda` and `textseg`.  
-When arguments are supplied to `lambda`, the default λ character will be changed to arguments.  
-When arguments are supplied to `textseg`, it will show arguments.  
+
+#### Textseg / Text
+	* When arguments are supplied to `textseg` or `text`, it will show the arguments.
+#### Lambda
+	* If you want to use admin check, you should follow the form of `text/rootText1`.  
+		* `text/rootText2`, will check privilege everytime you enter but it is very laggy. Don't use this.  
+		* If the cmd is running as administrator, the rootText will be shown instead of lambda. Otherwise, text will be shown instead of lambda.
+	
+	* If you don't want to use admin check, just supply any text not including `/` as arguments. The text will be shown instead of the lambda symbol.
 
 ### Examples
 ```lua
-Powerline.init({"textseg/λ:black+yellow", "time:red+black", "cwd", "node", "git", "text/\n", "lambda/nenw*"})
+Powerline.init({"textseg/λ:black+yellow", "time:red+black", "cwd", "node", "git", "text/\n", "lambda/nenw*/root* ⚡1"})
 ```
 
 ## Bundling
