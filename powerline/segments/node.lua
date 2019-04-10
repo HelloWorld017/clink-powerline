@@ -15,12 +15,15 @@ function Node.apply(Powerline)
 		if fd ~= nil then
 			local packageFile = fd:read("*a")
 			io.close(fd)
-
-			local parsedPackage, err = pcall(json.parse, packageFile)
-			if err then
-				value = value .. " " .. Powerline.Symbols.segmentSoft .. " " .. "Invalid Package"
+	
+			value = value .. " " .. Powerline.Symbols.segmentSoft .. " "
+			
+			local err, parsedPackage = pcall(json.parse, packageFile)
+			
+			if not err then
+				value = value .. "Invalid Package"
 			elseif parsedPackage.name ~= nil and parsedPackage.name ~= json.null then
-				value = value .. " " .. Powerline.Symbols.segmentSoft .. " " .. parsedPackage.name
+				value = value .. parsedPackage.name
 			end
 		end
 	end
