@@ -8,11 +8,14 @@ function Lambda.apply(Powerline, args)
 	local rootCheck = 0
 
 	if type(args) == "string" then
-		argValue, argRoot, argRootFlag = args:match("^([^/]+)%/([^/]*)([12])")
+		argValue, argRoot, argRootFlag = args:match("^([^/]*)%/([^/]*)([12])")
 		
 		if argRoot ~= nil then
-			value = argValue
 			rootCheck = tonumber(argRootFlag)
+			
+			if #argValue > 0 then
+				value = argValue
+			end
 			
 			if #argRoot > 0 then
 				rootValue = argRoot
