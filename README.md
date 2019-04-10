@@ -48,13 +48,13 @@ lightBlack, lightRed, lightGreen, lightYellow, lightBlue, lightMagenta, lightCya
 `args` are optional and used for `lambda` and `textseg`.  
 
 #### Textseg / Text
-	* When arguments are supplied to `textseg` or `text`, it will show the arguments.
+ * When arguments are supplied to `textseg` or `text`, it will show the arguments.
 #### Lambda
-	* If you want to use admin check, you should follow the form of `text/rootText1`.  
-		* `text/rootText2`, will check privilege everytime you enter but it is very laggy. Don't use this.  
-		* If the cmd is running as administrator, the rootText will be shown instead of lambda. Otherwise, text will be shown instead of lambda.
+ * If you want to use admin check, you should follow the form of `text/rootText1`.  
+   * `text/rootText2`, will check privilege everytime you enter but it is very laggy. Don't use this.  
+   * If the cmd is running as administrator, the rootText will be shown instead of lambda. Otherwise, text will be shown instead of lambda.
 	
-	* If you don't want to use admin check, just supply any text not including `/` as arguments. The text will be shown instead of the lambda symbol.
+ * If you don't want to use admin check, just supply any text not including `/` as arguments. The text will be shown instead of the lambda symbol.
 
 ### Examples
 ```lua
